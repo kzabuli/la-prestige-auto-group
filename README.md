@@ -12,12 +12,21 @@ powershell -ExecutionPolicy Bypass -File serve.ps1
 
 Then open http://localhost:8080 in a browser. (Opening `index.html` directly as a file also works, but some browsers restrict `fetch`/relative-asset loading over `file://`, so the server is the reliable option.)
 
+## Tests
+
+A couple of sanity checks for the inventory data and price formatting live in `tests/script.test.js` (plain Node, no dependencies):
+
+```bash
+npm test
+```
+
 ## What's in here
 
 - `index.html` — all page content and structure (hero, services, inventory, brokerage explainer, testimonials, contact form, footer)
 - `css/style.css` — black/gold "prestige" theme, fully responsive (desktop/tablet/mobile with a hamburger menu)
 - `js/script.js` — renders the inventory grid from a data array, handles the category filter buttons, mobile nav toggle, and contact form validation
 - `serve.ps1` — a zero-dependency local static file server (uses .NET's HttpListener) so relative CSS/JS/image paths resolve correctly
+- `tests/script.test.js` — basic tests for `formatPrice()` and the `CARS` inventory data
 
 ## To make this your real site
 
