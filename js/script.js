@@ -102,10 +102,16 @@ function initYear() {
   if (el) el.textContent = new Date().getFullYear();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderCars("all");
-  initFilters();
-  initNavToggle();
-  initContactForm();
-  initYear();
-});
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    renderCars("all");
+    initFilters();
+    initNavToggle();
+    initContactForm();
+    initYear();
+  });
+}
+
+if (typeof module !== "undefined") {
+  module.exports = { formatPrice, CARS };
+}

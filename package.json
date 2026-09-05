@@ -1,0 +1,9 @@
+{
+  "name": "la-prestige-auto-group",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site for La Prestige Auto Group",
+  "scripts": {
+    "test": "node tests/script.test.js"
+  }
+}
